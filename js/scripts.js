@@ -76,6 +76,41 @@ form.form.addEventListener('submit', function(event){
 	
   	// XHR Request
 	
-	// ...
+	let xhr = new XMLHttpRequest()
+  	xhr.open("GET", url)
+	xhr.onreadystatechange = function() {
+		if (this.readyState != 4) return
+		
+		let result = JSON.parse(this.responseText)
+		
+		if(result.status)
+		{
+			if( form.title.checked )
+			{
+				results.title.value.textContent = result.title != null ? result.title : 'not isset'
+				results.title.value.classList[result.title != null ? 'remove' : 'add']('text-danger')
+			}
+			if( form.description.checked )
+			{
+				results.description.value.textContent = result.description != null ? result.description : 'not isset'
+				results.description.value.classList[result.description != null ? 'remove' : 'add']('text-danger')
+			}
+			if( form.links.checked )
+			{
+				results.links.value.textContent = result.links
+			}
+			if( form.h1.checked )
+			{
+				results.h1.value.innerHTML = result.h1.length ? result.h1.join('<br>') : 'not isset'
+				results.h1.value.classList[result.h1.length ? 'remove' : 'add']('text-danger')
+			}
+		}
+		else
+		{
+			results.block.classList.add('d-none')
+			form.url.classList.add('is-invalid')
+		}
+	}
+  	xhr.send()
 	
 })
