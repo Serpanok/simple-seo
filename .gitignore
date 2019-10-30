@@ -1,0 +1,5 @@
+# exclude everything
+_notes/
+
+PG/
+PG.*
