@@ -8,6 +8,7 @@ let form = {
 	description: document.getElementById('analyzerForm_description'),
 	links: document.getElementById('analyzerForm_links'),
 	h1: document.getElementById('analyzerForm_h1'),
+	selectError: document.getElementById('analyzerForm_selectError'),
 }
 
 let results = {
@@ -38,6 +39,15 @@ let loadingText = 'analyzing...'
 form.form.addEventListener('submit', function(event){
 	event.preventDefault()
 	
+	form.url.classList.remove('is-invalid')
+	
+	if( !form.title.checked && !form.description.checked && !form.links.checked && !form.h1.checked )
+	{
+		form.selectError.classList.remove('d-none')
+		return
+	}
+	form.selectError.classList.add('d-none')
+	
 	let url = '/app/analyzerAPI.php?url=' + form.url.value
 	if(form.title.checked) url += '&title=1'
 	if(form.description.checked) url += '&description=1'
@@ -46,6 +56,7 @@ form.form.addEventListener('submit', function(event){
 	
 	results.block.classList.remove('d-none')
 	results.url.value.textContent = form.url.value
+	results.url.value.setAttribute('href', form.url.value)
 	
 	results.title.title.classList[form.title.checked ? 'remove' : 'add']('d-none')
 	results.title.value.classList[form.title.checked ? 'remove' : 'add']('d-none')

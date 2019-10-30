@@ -19,8 +19,8 @@
 				<form id="analyzerForm">
 					<div class="form-group">
 						<label for="exampleInputEmail1">URL</label>
-						<input name="url" type="url" class="form-control" placeholder="for analyze..." id="analyzerForm_url" required value="http://google.com">
-								<div class="invalid-feedback">Incorrect URL.</div>
+						<input name="url" type="url" class="form-control" placeholder="for analyze..." id="analyzerForm_url" required value="http://simpleseo.space-ship.xyz/debugPage.html">
+						<div class="invalid-feedback">Incorrect URL.</div>
 						<small id="emailHelp" class="form-text text-muted">Ex.: http://google.com</small>
 					</div>
 					<div class="form-group form-check">
@@ -39,12 +39,13 @@
 						<input name="h1" type="checkbox" class="form-check-input" id="analyzerForm_h1" checked>
 						<label class="form-check-label" for="analyzerForm_h1">Get <em>&lt;h1&gt;...&lt;/h1&gt;</em> value</label>
 					</div>
+					<div class="text-danger mb-3 d-none" id="analyzerForm_selectError">Select analyzing parameters.</div>
 					
 					<div class="row">
-						<div class="col-10">
+						<div class="col-sm-8">
 							<button type="submit" class="btn btn-success btn-block">Send</button>
 						</div>
-						<div class="col-2">
+						<div class="col-sm-4">
 							<button type="reset" class="btn btn-secondary btn-block">Clear</button>
 						</div>
 					</div>
@@ -54,19 +55,21 @@
 				<h2 class="mb-3">Results</h2>
 				<dl class="row">
 					<dt class="col-sm-3">URL</dt>
-					<dd class="col-sm-9" id="results_url_value">http://google.com/</dd>
+					<dd class="col-sm-9">
+						<a href="" id="results_url_value" target="_blank"></a>
+					</dd>
 					
 					<dt class="col-sm-3 d-none" id="results_title">Title</dt>
-					<dd class="col-sm-9 d-none" id="results_title_value">Google</dd>
+					<dd class="col-sm-9 d-none" id="results_title_value"></dd>
 					
 					<dt class="col-sm-3 d-none" id="results_description">Description meta</dt>
-					<dd class="col-sm-9 d-none" id="results_description_value">Search engine</dd>
+					<dd class="col-sm-9 d-none" id="results_description_value"></dd>
 					
 					<dt class="col-sm-3 d-none" id="results_links">Number of internal links</dt>
-					<dd class="col-sm-9 d-none" id="results_links_value">3</dd>
+					<dd class="col-sm-9 d-none" id="results_links_value"></dd>
 					
 					<dt class="col-sm-3 d-none" id="results_h1">H1 value</dt>
-					<dd class="col-sm-9 d-none" id="results_h1_value">Google</dd>
+					<dd class="col-sm-9 d-none" id="results_h1_value"></dd>
 				</dl>
 			</div>
 		</div>
