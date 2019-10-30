@@ -19,24 +19,24 @@
 				<form id="analyzerForm">
 					<div class="form-group">
 						<label for="exampleInputEmail1">URL</label>
-						<input type="url" class="form-control" placeholder="for analyze...">
+						<input name="url" type="url" class="form-control" placeholder="for analyze..." id="analyzerForm_url" required value="http://google.com">
 								<div class="invalid-feedback">Incorrect URL.</div>
 						<small id="emailHelp" class="form-text text-muted">Ex.: http://google.com</small>
 					</div>
 					<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input" id="analyzerForm_title">
+						<input name="title" type="checkbox" class="form-check-input" id="analyzerForm_title" checked>
 						<label class="form-check-label" for="analyzerForm_title">Get <em>&lt;title&gt;...&lt;/title&gt;</em> value</label>
 					</div>
 					<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input" id="analyzerForm_description">
+						<input name="description" type="checkbox" class="form-check-input" id="analyzerForm_description" checked>
 						<label class="form-check-label" for="analyzerForm_description">Get <em>&lt;meta name="Description" content="..."/&gt;</em> value</label>
 					</div>
 					<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input" id="analyzerForm_links">
+						<input name="links" type="checkbox" class="form-check-input" id="analyzerForm_links" checked>
 						<label class="form-check-label" for="analyzerForm_links">Get <em>number of internal links</em></label>
 					</div>
 					<div class="form-group form-check">
-						<input type="checkbox" class="form-check-input" id="analyzerForm_h1">
+						<input name="h1" type="checkbox" class="form-check-input" id="analyzerForm_h1" checked>
 						<label class="form-check-label" for="analyzerForm_h1">Get <em>&lt;h1&gt;...&lt;/h1&gt;</em> value</label>
 					</div>
 					
@@ -50,23 +50,23 @@
 					</div>
 				</form>
 			</div>
-			<div class="col-md-12 col-lg-8 col-xl-9" id="results">
+			<div class="col-md-12 col-lg-8 col-xl-9 d-none" id="results">
 				<h2 class="mb-3">Results</h2>
 				<dl class="row">
 					<dt class="col-sm-3">URL</dt>
 					<dd class="col-sm-9" id="results_url_value">http://google.com/</dd>
 					
-					<dt class="col-sm-3" id="results_title">Title</dt>
-					<dd class="col-sm-9" id="results_title_value">Google</dd>
+					<dt class="col-sm-3 d-none" id="results_title">Title</dt>
+					<dd class="col-sm-9 d-none" id="results_title_value">Google</dd>
 					
-					<dt class="col-sm-3" id="results_description">Description meta</dt>
-					<dd class="col-sm-9" id="results_description_value">Search engine</dd>
+					<dt class="col-sm-3 d-none" id="results_description">Description meta</dt>
+					<dd class="col-sm-9 d-none" id="results_description_value">Search engine</dd>
 					
-					<dt class="col-sm-3" id="results_links">Number of internal links</dt>
-					<dd class="col-sm-9" id="results_links_value">3</dd>
+					<dt class="col-sm-3 d-none" id="results_links">Number of internal links</dt>
+					<dd class="col-sm-9 d-none" id="results_links_value">3</dd>
 					
-					<dt class="col-sm-3" id="results_h1">H1 value</dt>
-					<dd class="col-sm-9" id="results_h1_value">Google</dd>
+					<dt class="col-sm-3 d-none" id="results_h1">H1 value</dt>
+					<dd class="col-sm-9 d-none" id="results_h1_value">Google</dd>
 				</dl>
 			</div>
 		</div>
